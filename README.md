@@ -14,6 +14,7 @@ El orden es el de avance de la materia. Qué guía corresponde a cada clase est�
 |       2 | [introduccion](introduccion/) | Primeros objetos: estado y comportamiento, constructor, operaciones que pueden rechazarse |
 |       3 | [basicas](basicas/) | Cuestiones básicas del lenguaje: la clase `Rango`, inmutabilidad, igualdad, orden |
 |       4 | [objetos](objetos/) | Clases simples a partir de una interfaz dada, con pre y post condiciones |
+|       4 | [relaciones](relaciones/) | Relaciones entre objetos: agregación, composición y asociación, igualdad y orden |
 |       5 | [herencia](herencia/) | Herencia y polimorfismo: reutilización, sobrescritura, clases abstractas e interfaces |
 |       6 | [colecciones](colecciones/) | Listas, conjuntos, mapas, colas y pilas |
 |       6 | [excepciones](excepciones/) | Excepciones propias, `try-catch`, try with resources, `assert` |
