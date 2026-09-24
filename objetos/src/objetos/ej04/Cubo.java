@@ -2,61 +2,51 @@ package objetos.ej04;
 
 public class Cubo {
 
-	// completar
+	private double lado;
+	private double areaCara;
+	private double volumen;
 	
-    /**
-     * pre : longitudLado es un valor mayor a 0.
-     * post: inicializa el cubo a partir de la longitud de lado dada
-     */
     public Cubo (double longitudLado) {
-    	// completar
+    	if(longitudLado > 0) {
+    		lado = longitudLado;
+    		areaCara = Math.pow(longitudLado, 2);
+    		volumen = Math.pow(longitudLado, 3);
+    	}
     }
 
-    /**
-     * post: devuelve la longitud de todos los lados del cubo
-     */
     public double obtenerLado() {
-    	// completar
-    	return -1;
+    	return lado;
     }
     
-    /**
-     * pre : longitudLado es un valor mayor a 0.
-     * post: cambia la longitud de todos los lados del cubo
-     */
     public void cambiarLado(double longitudLado) {
-    	// completar
+    	if(longitudLado > 0) {
+    		lado = longitudLado;
+    		areaCara = Math.pow(longitudLado, 2);
+    		volumen = Math.pow(longitudLado, 3);
+    	}
     }
     
-    /**
-     * post: devuelve el área de la superficie de las caras del cubo
-     */
     public double obtenerAreaCara() {
-    	// completar
-    	return -1;
+    	return areaCara;
     }
     
-    /**
-     * pre: areaCara es un valor mayor a 0.
-     * post: cambia el área de las caras del cubo
-     */
     public void cambiarAreaCara(double areaCara) {
-    	// completar
+    	if(areaCara > 0) {
+    		this.areaCara = areaCara;
+    		lado = Math.sqrt(areaCara);
+    		volumen = Math.pow(areaCara, 1.5);
+    	}
     }
 
-    /**
-     * post: devuelve el volumen que encierra el cubo
-     */
     public double obtenerVolumen() {
-    	// completar
-    	return -1;
+    	return volumen;
     }
 
-    /**
-     * pre: volumen es un valor mayor a 0.
-     * post: cambia el volumen del cubo
-     */
     public void cambiarVolumen(double volumen) {
-    	// completar
+    	if(volumen > 0) {
+    		this.volumen = volumen;
+    		lado = Math.cbrt(volumen);
+    		areaCara = Math.pow(lado, 2);
+    	}
     }
 }

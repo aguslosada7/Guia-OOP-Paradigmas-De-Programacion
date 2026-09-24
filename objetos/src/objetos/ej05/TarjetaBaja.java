@@ -1,68 +1,47 @@
 package objetos.ej05;
 
 public class TarjetaBaja {
-
-	// completar
+	private double saldo;
+	private int cantidadViajesEnColectivo;
+	private int cantidadViajesEnSubte;
 	
-	/**
-	 * post: saldo de la Tarjeta en saldoInicial.
-	 */
 	public TarjetaBaja(double saldoInicial) {
-		// completar
+		if(saldoInicial > 0)
+			saldo = saldoInicial;
 	}
 
-	/**
-	 * post: devuelve el saldo actual de la Tarjeta
-	 */
 	public double obtenerSaldo() {
-		// completar
-		return -1;
+		return saldo;
 	}
 
-	/**
-	 * post: agrega el monto al saldo de la Tarjeta.
-	 */
 	public void cargar(double monto) {
-		// completar
+		if(monto > 0)
+			saldo += monto;
 	}
 
-	/**
-	 * pre : saldo suficiente. post: utiliza 39.59 del saldo para un viaje en
-	 * colectivo.
-	 */
 	public void pagarViajeEnColectivo() {
-		// completar
+		if(saldo >= 39.59) {
+			saldo -= 39.59;
+			cantidadViajesEnColectivo++;
+		}
 	}
 
-	/**
-	 * pre : saldo suficiente. post: utiliza 34.50 del saldo para un viaje en subte.
-	 */
 	public void pagarViajeEnSubte() {
-		// completar
+		if(saldo >= 34.50) {
+			saldo -= 34.50;
+			cantidadViajesEnSubte++;
+		}
 	}
 
-	/**
-	 * post: devuelve la cantidad de viajes realizados.
-	 */
 	public int contarViajes() {
-		// completar
-		return -1;
+		return cantidadViajesEnColectivo + cantidadViajesEnSubte;
 	}
 
-	/**
-	 * post: devuelve la cantidad de viajes en colectivo.
-	 */
 	public int contarViajesEnColectivo() {
-		// completar
-		return -1;
+		return cantidadViajesEnColectivo;
 	}
 
-	/**
-	 * post: devuelve la cantidad de viajes en subte.
-	 */
 	public int contarViajesEnSubte() {
-		// completar
-		return -1;
+		return cantidadViajesEnSubte;
 	}
-
 }

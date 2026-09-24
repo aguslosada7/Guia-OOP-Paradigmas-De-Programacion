@@ -2,38 +2,33 @@ package objetos.ej01;
 
 public class Nota {
 	
-	// completar
+	private int nota;
 	
-    /**
-     * pre : valorInicial está comprendido entre 0 y 10.
-     * post: inicializa la Nota con el valor indicado.
-     */
     public Nota(int valorInicial) {
-    	// completar
+    	if(valorInicial>=1 && valorInicial<=10)
+    		nota = valorInicial;
     }
     
-    /**
-     * post: devuelve el valor numérico de la Nota,
-     *       comprendido entre 0 y 10.
-     */
     public int obtenerValor() {
-    	// completar
-    	return -1;
+    	return nota;
     }
     
-    /**
-     * post: indica si la Nota permite o no la aprobación.
-     */
     public boolean aprobado() {
-    	// completar
+    	if(nota >= 4)
+    		return true;
+    	
     	return false;
     }
     
-    /**
-     * post: indica si la Nota implica desaprobación.
-     */
     public boolean desaprobado() {
-    	// completar
+    	if(nota < 4)
+    		return true;
+    	
     	return false;
+    }
+    
+    public void recuperar(int nuevoValor) {
+    	if(nuevoValor >= 1 && nuevoValor <= 10 && nuevoValor > nota)
+    		nota = nuevoValor;
     }
 }
