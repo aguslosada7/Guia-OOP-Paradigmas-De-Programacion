@@ -129,4 +129,14 @@ class CuentaTests {
 		assertEquals(150, cuenta.consultarSaldo());
 		assertEquals(50, cuenta.consultarMontoEnDescubierto());
 	}
+	
+	@Test
+	void cuentaCorrienteCreadaComoCuenta() {
+		Cuenta cuenta = new CuentaCorriente(50);
+		
+		cuenta.depositar(150);
+		cuenta.retirar(175);
+		assertEquals(0, cuenta.consultarSaldo());
+		// Como la clase Cuenta no conoce los métodos propios de la clase CuentaCorriente, no se puede validar el monto en descubierto
+	}
 }
