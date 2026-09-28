@@ -2,6 +2,10 @@ package herencia.ej01;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDate;
+import java.util.List;
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.Test;
 
 class CuentaTests {
@@ -138,5 +142,45 @@ class CuentaTests {
 		cuenta.retirar(175);
 		assertEquals(0, cuenta.consultarSaldo());
 		// Como la clase Cuenta no conoce los métodos propios de la clase CuentaCorriente, no se puede validar el monto en descubierto
+	}
+	
+	@Test
+	void transaccionesEnCuentaDeAhorros() {
+		Cuenta cuenta1 = new CuentaDeAhorros();
+		Cuenta cuenta2 = new CuentaCorriente(100);
+		Transaccion t1 = new Transaccion("Acreditación", 333, LocalDate.now());
+		Transaccion t2 = new Transaccion("Débito", 33, LocalDate.now());
+		Transaccion t3 = new Transaccion("Transferencia", 100, LocalDate.now());
+		List<Transaccion> ordenEsperadoDeTransacciones = new ArrayList<Transaccion>();
+		
+		ordenEsperadoDeTransacciones.add(t1);
+		ordenEsperadoDeTransacciones.add(t2);
+		ordenEsperadoDeTransacciones.add(t3);
+		
+		cuenta1.depositar(333);
+		cuenta1.retirar(33);
+		cuenta1.transferir(100, cuenta2);
+		
+		assertTrue(ordenEsperadoDeTransacciones.containsAll(cuenta1.getTransacciones()));
+	}
+	
+	@Test
+	void transaccionesEnCuentaCorriente() {
+		Cuenta cuenta1 = new CuentaCorriente(100);
+		Cuenta cuenta2 = new CuentaCorriente(33);
+		Transaccion t1 = new Transaccion("Acreditación", 233, LocalDate.now());
+		Transaccion t2 = new Transaccion("Débito", 33, LocalDate.now());
+		Transaccion t3 = new Transaccion("Transferencia", 3, LocalDate.now());
+		List<Transaccion> ordenEsperadoDeTransacciones = new ArrayList<Transaccion>();
+		
+		ordenEsperadoDeTransacciones.add(t1);
+		ordenEsperadoDeTransacciones.add(t2);
+		ordenEsperadoDeTransacciones.add(t3);
+		
+		cuenta1.depositar(233);
+		cuenta1.retirar(33);
+		cuenta1.transferir(3, cuenta2);
+		
+		assertTrue(ordenEsperadoDeTransacciones.containsAll(cuenta1.getTransacciones()));
 	}
 }

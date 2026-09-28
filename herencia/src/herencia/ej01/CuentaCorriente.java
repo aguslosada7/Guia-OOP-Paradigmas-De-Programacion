@@ -1,5 +1,7 @@
 package herencia.ej01;
 
+import java.time.LocalDate;
+
 public class CuentaCorriente extends Cuenta {
 	private double montoEnDescubierto;
 	
@@ -20,6 +22,7 @@ public class CuentaCorriente extends Cuenta {
 			super.saldo -= monto;
 		}
 		
+		super.transacciones.add(new Transaccion("Débito", monto, LocalDate.now()));
 		return true;
 	}
 	

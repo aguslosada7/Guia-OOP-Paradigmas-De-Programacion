@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Lustrador {
-	List<Lustrable> lustrador = new ArrayList<Lustrable>();
+	private List<Lustrable> lustrador = new ArrayList<Lustrable>();
 	
 	public void agregarInstrumento(Lustrable instrumento) {
 			lustrador.add(instrumento);

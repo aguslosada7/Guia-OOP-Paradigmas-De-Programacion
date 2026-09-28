@@ -1,7 +1,7 @@
 package herencia.ej02;
 
 public class InstrumentoDeViento extends Instrumento implements Afinable, Lustrable {
-	TipoDeInstrumentoDeViento tipoDeInstrumentoDeViento;
+	private TipoDeInstrumentoDeViento tipoDeInstrumentoDeViento;
 	
 	public InstrumentoDeViento(String nombre, String descripcion, TipoDeInstrumentoDeViento tipo) {
 		super(nombre, descripcion);

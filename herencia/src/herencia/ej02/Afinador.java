@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Afinador {
-	List<Afinable> afinador = new ArrayList<Afinable>();
+	private List<Afinable> afinador = new ArrayList<Afinable>();
 	
 	public void agregarInstrumento(Afinable instrumento) {
 			afinador.add(instrumento);

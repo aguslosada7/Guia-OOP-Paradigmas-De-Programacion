@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Orquesta {
-	List<Instrumento> orquesta = new ArrayList<Instrumento>();
+	private List<Instrumento> orquesta = new ArrayList<Instrumento>();
 
 	public void agregarInstrumento(Instrumento instrumento) {
 		orquesta.add(instrumento);
