@@ -15,11 +15,6 @@ public class Transaccion {
 	}
 
 	@Override
-	public String toString() {
-		return "Transaccion [motivo=" + motivo + ", monto=" + monto + ", fecha=" + fecha + "]";
-	}
-
-	@Override
 	public int hashCode() {
 		return Objects.hash(fecha, Double.valueOf(monto), motivo);
 	}
