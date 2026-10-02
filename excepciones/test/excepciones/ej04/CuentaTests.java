@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 class CuentaTests {
 
 	@Test
-	void test() {
+	void retirarMontoMayorAlSaldo() {
 		Cuenta cuenta = new Cuenta();
 		cuenta.depositar(100);
 		

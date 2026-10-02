@@ -13,8 +13,14 @@ public class Main {
 		Set<String> listaDePalabras;
 		
 		try {
+			// Se lee el texto del archivo y se guarda en un String
 			String texto = Files.readString(Path.of("src/colecciones/ej03/a-new-hope.txt"));
+			
+			// 1. Se separan las palabras del texto (los separadores en este caso son ".", "," y " ")
+			// 2. Las palabras se guardan en una lista
+			// 3. Dicha lista se convierte en un HashSet
 			listaDePalabras = new HashSet<String>(Arrays.asList(texto.split("[,. ]")));
+			
 			for(String palabra: listaDePalabras)
 				System.out.println(palabra);
 		}
